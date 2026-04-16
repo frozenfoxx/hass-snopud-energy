@@ -1,0 +1,50 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to MySnoPUD",
+        "description": "Enter your MySnoPUD (my.snopud.com) login credentials.",
+        "data": {
+          "email": "Email address",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate with MySnoPUD",
+        "description": "Your SnoPUD credentials are no longer valid. Please enter your updated credentials.",
+        "data": {
+          "email": "Email address",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid email or password",
+      "cannot_connect": "Unable to connect to MySnoPUD. Please try again later.",
+      "unknown": "An unexpected error occurred"
+    },
+    "abort": {
+      "already_configured": "This account is already configured",
+      "reauth_successful": "Re-authentication successful"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "latest_energy": {
+        "name": "Latest billing period energy"
+      },
+      "latest_cost": {
+        "name": "Latest billing period cost"
+      },
+      "current_month_energy": {
+        "name": "Current month energy"
+      },
+      "current_month_cost": {
+        "name": "Current month cost"
+      },
+      "last_read_date": {
+        "name": "Last read date"
+      }
+    }
+  }
+}

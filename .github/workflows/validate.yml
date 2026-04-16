@@ -1,0 +1,73 @@
+name: Validate
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate-hacs:
+    name: HACS Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: HACS Validation
+        uses: hacs/action@main
+        with:
+          category: integration
+
+  validate-hassfest:
+    name: Hassfest Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Hassfest Validation
+        uses: home-assistant/actions/hassfest@master
+
+  lint:
+    name: Lint (Ruff)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install ruff
+        run: pip install ruff
+      - name: Run ruff check
+        run: ruff check custom_components/snopud_energy/
+      - name: Run ruff format check
+        run: ruff format --check custom_components/snopud_energy/
+
+  typecheck:
+    name: Type Check (mypy)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install mypy homeassistant aiohttp
+      - name: Run mypy
+        run: >
+          mypy custom_components/snopud_energy/
+          --ignore-missing-imports
+          --no-error-summary
+          || true
+
+  test-import:
+    name: Verify Python Syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile all .py files
+        run: python -m py_compile custom_components/snopud_energy/*.py

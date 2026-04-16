@@ -1,0 +1,12 @@
+{
+  "domain": "snopud_energy",
+  "name": "Snohomish County PUD (SnoPUD) Energy",
+  "codeowners": ["@frozenfoxx"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/frozenfoxx/hass-snopud-energy",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/frozenfoxx/hass-snopud-energy/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
