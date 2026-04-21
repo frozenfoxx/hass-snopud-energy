@@ -77,4 +77,8 @@ Apache License — see [LICENSE](LICENSE) for details.
 
 ## Disclaimer
 
-This integration is not affiliated with or endorsed by Snohomish County PUD. Use at your own risk.
+This integration is not affiliated with, endorsed by, or sponsored by Snohomish County PUD (SnoPUD). Use at your own risk.
+
+## Trademark Notice
+
+"Snohomish County PUD," "SnoPUD," and any associated names and logos are trademarks or registered trademarks of the Snohomish County Public Utility District. This project uses these names solely for identification and compatibility purposes and does not claim any ownership or affiliation.
