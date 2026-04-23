@@ -43,9 +43,11 @@ class SnoPUDConfigFlow(ConfigFlow, domain=DOMAIN):
 
             try:
                 await client.async_login()
-            except SnoPUDAuthError:
+            except SnoPUDAuthError as err:
+                _LOGGER.error("SnoPUD auth failed: %s", err)
                 errors["base"] = "invalid_auth"
-            except SnoPUDConnectionError:
+            except SnoPUDConnectionError as err:
+                _LOGGER.error("SnoPUD connection failed: %s", err)
                 errors["base"] = "cannot_connect"
             except Exception:
                 _LOGGER.exception("Unexpected exception during config flow")

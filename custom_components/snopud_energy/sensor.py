@@ -33,7 +33,7 @@ SENSOR_DESCRIPTIONS: tuple[SnoPUDSensorEntityDescription, ...] = (
     SnoPUDSensorEntityDescription(
         key="latest_energy",
         translation_key="latest_energy",
-        name="Latest Billing Period Energy",
+        name="Latest Daily Energy",
         native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL,
@@ -43,7 +43,7 @@ SENSOR_DESCRIPTIONS: tuple[SnoPUDSensorEntityDescription, ...] = (
     SnoPUDSensorEntityDescription(
         key="latest_cost",
         translation_key="latest_cost",
-        name="Latest Billing Period Cost",
+        name="Latest Daily Cost",
         native_unit_of_measurement="USD",
         device_class=SensorDeviceClass.MONETARY,
         state_class=SensorStateClass.TOTAL,

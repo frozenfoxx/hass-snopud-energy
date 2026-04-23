@@ -9,7 +9,7 @@ This integration scrapes your usage data from the [MySnoPUD](https://my.snopud.c
 ## Features
 
 - Automatic login and session management with the MySnoPUD portal
-- Billing-period energy usage (kWh) and cost ($) sensors
+- Daily energy usage (kWh) and cost ($) sensors
 - Current month aggregated energy and cost
 - Compatible with the Home Assistant Energy dashboard
 - UI-based configuration (no YAML editing required)
@@ -19,8 +19,8 @@ This integration scrapes your usage data from the [MySnoPUD](https://my.snopud.c
 
 | Sensor | Description | Unit |
 |--------|-------------|------|
-| Latest Billing Period Energy | kWh from the most recent billing period | kWh |
-| Latest Billing Period Cost | Cost from the most recent billing period | USD |
+| Latest Daily Energy | kWh from the most recent daily reading | kWh |
+| Latest Daily Cost | Cost from the most recent daily reading | USD |
 | Current Month Energy | Aggregated kWh for the current calendar month | kWh |
 | Current Month Cost | Aggregated cost for the current calendar month | USD |
 | Last Read Date | Date of the most recent meter reading | — |

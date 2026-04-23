@@ -5,6 +5,7 @@ DOMAIN = "snopud_energy"
 CONF_ACCOUNT_NUMBER = "account_number"
 
 BASE_URL = "https://my.snopud.com"
+LOGIN_PAGE_URL = BASE_URL
 LOGIN_URL = f"{BASE_URL}/Home/Login"
 DASHBOARD_TABLE_URL = f"{BASE_URL}/Dashboard/Table"
 DOWNLOAD_SETTINGS_URL = f"{BASE_URL}/Usage/InitializeDownloadSettings"
