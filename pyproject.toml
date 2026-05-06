@@ -26,6 +26,11 @@ convention = "google"
 [tool.ruff.lint.isort]
 known-first-party = ["custom_components.snopud_energy"]
 
+[tool.ruff.lint.per-file-ignores]
+# Test stubs mirror HA's API surface; they don't need docstrings or
+# the same naming/upgrade rules as production code.
+"tests/*.py" = ["D101", "D103", "D107", "N818", "UP017", "UP042"]
+
 [tool.mypy]
 python_version = "3.12"
 ignore_missing_imports = true
