@@ -58,6 +58,8 @@ The integration imports up to 60 days of daily history into the recorder's long-
 
 > **Do not** select the live `Latest Daily Energy` sensor as your grid consumption source. It exposes a single day's kWh, not a cumulative meter reading, so the Energy dashboard would compute the delta between consecutive states and produce nonsense (often negative) values. The live sensors are for at-a-glance display only.
 
+> **Currency note:** the cost statistic is written using your Home Assistant currency setting (**Settings** > **System** > **General**) at the time of each refresh. If you're a US-based user, set this to `USD ($)` *before* installing the integration so the cost stat is created in the right currency. Changing the HA currency later will only affect rows imported after the change — existing rows keep the unit they were written with.
+
 ### Migrating from a previous install
 
 If you previously added the `Latest Daily Energy` sensor as your grid source, switch to the `snopud_energy:energy_consumption` statistic above. The old sensor-based history can be cleared from **Developer Tools** > **Statistics** if you'd like to remove the bad data points.
