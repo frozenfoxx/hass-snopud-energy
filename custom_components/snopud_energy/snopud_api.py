@@ -775,6 +775,17 @@ class SnoPUDApiClient:
                 continue
 
         if account_data.readings:
+            # The portal's CSV ordering varies (sometimes most-recent-first).
+            # Sort ascending so latest_* truly reflects the newest reading
+            # and downstream consumers can rely on chronological order.
+            def _sort_key(r: SnoPUDMeterReading) -> datetime:
+                try:
+                    return datetime.strptime(r.read_date, "%m/%d/%Y")
+                except ValueError:
+                    return datetime.min
+
+            account_data.readings.sort(key=_sort_key)
+
             latest = account_data.readings[-1]
             account_data.latest_kwh = latest.kwh
             account_data.latest_cost = latest.cost

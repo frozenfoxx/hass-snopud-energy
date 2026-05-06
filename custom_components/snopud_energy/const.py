@@ -13,6 +13,13 @@ DOWNLOAD_URL = f"{BASE_URL}/Usage/Download"
 
 DEFAULT_SCAN_INTERVAL_HOURS = 12
 
+# External statistic IDs surfaced to the Energy dashboard. The colon
+# prefix marks them as integration-owned ("external") statistics so
+# they show up in the Grid consumption / cost pickers without needing
+# a backing entity.
+STAT_ID_ENERGY = f"{DOMAIN}:energy_consumption"
+STAT_ID_COST = f"{DOMAIN}:energy_cost"
+
 # Download form field values
 FORMAT_CSV = "2"
 FORMAT_GREEN_BUTTON = "1"
