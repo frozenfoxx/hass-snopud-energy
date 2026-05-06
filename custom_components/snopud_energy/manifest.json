@@ -1,6 +1,7 @@
 {
   "domain": "snopud_energy",
   "name": "Snohomish County PUD (SnoPUD) Energy",
+  "after_dependencies": ["recorder"],
   "codeowners": ["@frozenfoxx"],
   "config_flow": true,
   "dependencies": [],
